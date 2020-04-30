@@ -191,30 +191,6 @@ def dfa_dfamin(automat, alf, st, st_fin, q0):
 
 # PROGRAM PRINCIPAL
 
-f = open("fisier.txt")
-q0 = f.readline()
-q0 = int(q0)
-alf = f.readline()
-st = f.readline()
-stf = f.readline()
-alf.split()
-st.split()
-for i in range(len(st)):
-    st[i] = int(st[i])
-stf.split()
-for i in range(len(stf)):
-    stf[i] = int(stf[i])
-automat = [-1] * len(st)[-1] * len(alf)
-for i in range(len(st)):
-    for j in range(len(alf)):
-        automat[i][j] = f.readline()
-        automat[i][j].split()
-        for k in range(len(automat[i][j])):
-            automat[i][j][k] = int(automat[i][j][k])
-automat, stf, alf = enfa_to_nfa(automat, alf, st, stf)
-print(automat)
-automat, stf = nfa_to_dfa(automat, alf, st, q0, stf)
-print(automat)
+
 automat, st, stf = dfa_dfamin(automat, alf, st, stf, q0)
 print(automat)
-f.close()
